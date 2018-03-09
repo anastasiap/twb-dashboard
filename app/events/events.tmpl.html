@@ -1,0 +1,176 @@
+<div>
+    <div mc-notification notification="events.notification"></div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Афиша</h2>
+        </div>
+    </div>
+
+    <div class="tabsDynamicHeight event-form">
+        <md-content>
+            <md-tabs md-dynamic-height md-selected="events.activeTab">
+                <md-tab label="Добавить джем" md-on-select="events.setActiveTab('0')">
+                    <md-content class="md-padding">
+                        <div layout="column">
+                            <md-content layout-padding="">
+
+                                <!--<div event-form></div>-->
+                                    <form name="events.newJamForm" ng-submit="events.submitEvent('newJamForm', events.jam, events.jam.id)" novalidate>
+                                        <div layout="column">
+                                            <md-input-container class="md-block select-input">
+                                                <label>Город</label>
+                                                <md-select ng-model="events.jam.city" required>
+                                                    <md-option ng-repeat="city in events.cities track by city.id"
+                                                               value="{{city.id}}">
+                                                        {{city.title}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                            <md-input-container class="md-block select-input">
+                                                <label>Клуб</label>
+                                                <md-select ng-model="events.jam.place" required>
+                                                    <md-option ng-repeat="club in events.places track by club.id"
+                                                               value="{{club.id}}">
+                                                        {{club.title}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                            <md-input-container class="md-block">
+                                                <label>Номер джема</label>
+                                                <input ng-model="events.jam.jam_number" required>
+                                            </md-input-container>
+                                            <div layout-gt-sm="row" class="form-datetime">
+                                                <md-input-container class="md-block">
+                                                    <label>Время</label>
+                                                    <input ng-model="events.jam.time" required >
+                                                </md-input-container>
+                                                <md-input-container class="md-block">
+                                                    <label>Дата</label>
+                                                    <md-datepicker ng-model="events.jam.date" required></md-datepicker>
+                                                </md-input-container>
+                                            </div>
+                                            <md-input-container class="md-block">
+                                                <label>Линк</label>
+                                                <input ng-model="events.jam.link">
+                                            </md-input-container>
+                                            <input ng-model="events.jam.type" value="{{ events.jam.type = 'jam' }}" type="hidden">
+                                        </div>
+                                        <md-button ng-disabled="newJamForm.$invalid" type="submit" class="md-raised md-primary pull-right">Сохранить джем</md-button>
+                                    </form>
+                            </md-content>
+                        </div>
+                    </md-content>
+                </md-tab>
+
+                <md-tab label="Добавить концерт" md-on-select="events.setActiveTab('1')">
+                    <md-content class="md-padding">
+                        <div layout="column">
+                            <md-content layout-padding="">
+                                    <form name="events.newGigForm" ng-submit="events.submitEvent('newGigForm', events.gig, events.gig.id)" novalidate>
+                                        <div layout="column">
+                                            <md-input-container class="md-block select-input">
+                                                <label>Город</label>
+                                                <md-select ng-model="events.gig.city" required>
+                                                    <md-option ng-repeat="city in events.cities track by city.id"
+                                                               value="{{city.id}}">
+                                                        {{city.title}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                            <md-input-container class="md-block select-input">
+                                                <label>Клуб</label>
+                                                <md-select ng-model="events.gig.place" required>
+                                                    <md-option ng-repeat="club in events.places track by club.id"
+                                                               value="{{club.id}}">
+                                                        {{club.title}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                            <md-input-container class="md-block select-input">
+                                                <label>Ансамбль</label>
+                                                <md-select ng-model="events.gig.band" required>
+                                                    <md-option ng-repeat="band in events.bands track by band.id"
+                                                               value="{{band.id}}">
+                                                        {{band.title}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                            <div layout-gt-sm="row" class="form-datetime">
+                                                <md-input-container class="md-block">
+                                                    <label>Время</label>
+                                                    <input ng-model="events.gig.time" datetime="yyyy-MM-dd HH:mm:ss" required>
+                                                </md-input-container>
+                                                <md-input-container class="md-block">
+                                                    <label>Дата</label>
+                                                    <md-datepicker ng-model="events.gig.date" md-open-on-focus="" required></md-datepicker>
+                                                </md-input-container>
+                                            </div>
+                                            <md-input-container class="md-block">
+                                                <label>Линк</label>
+                                                <input ng-model="events.gig.link">
+                                            </md-input-container>
+                                            <input ng-model="events.gig.type" value="{{ events.gig.type = 'gig' }}" type="hidden">
+                                        </div>
+                                        <md-button ng-disabled="newGigForm.$invalid" type="submit" class="md-raised md-primary pull-right">Сохранить концерт</md-button>
+                                    </form>
+                            </md-content>
+                        </div>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+        </md-content>
+    </div>
+
+    <div class="tabsDynamicHeight events-list">
+        <md-content>
+            <md-tabs md-dynamic-height="" md-border-bottom="" md-center-tabs="true">
+                <md-tab
+                    ng-repeat="city in events.cities track by city.id" label="{{city.title}}" ng-click="events.getEventsByParam('api/events', 'city', city.id)">
+                    <md-content class="md-padding">
+                        <table class="table table-sm">
+                            <thead>
+                            <tr class="table-active">
+                                <th>#</th>
+                                <th>Название</th>
+                                <th>Место</th>
+                                <th>Дата</th>
+                                <th>Время</th>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="post in events.list">
+                                <th scope="row">{{post.id}}</th>
+                                <td ng-show="post.type === 'jam'">{{post.jam_number}}-й джем Manouche Club</td>
+                                <td ng-show="post.type === 'gig'">Концерт {{post.band_title}}</td>
+                                <td>{{post.place_title}}</td>
+                                <td>{{post.date | date:'dd/MM/yyyy'}}</td>
+                                <td>{{post.time | date:'HH:mm' }}</td>
+                                <td class="text-center"><a ng-click="events.editEvent(post.id)"><i class="fa fa-edit"></i></a></td>
+                                <td class="text-center"><div confirm-delete on-confirm="events.eventDelete(post.id)"></div></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </md-content>
+                </md-tab>
+            </md-tabs>
+
+        </md-content>
+        <div class="row-fluid">
+            <ul uib-pagination
+                total-items="events.count_pages"
+                ng-model="events.current_page"
+                items-per-page="events.per_page"
+                ng-click="events.getEventsByParam('api/events', 'p', events.current_page)"
+                max-size="5"
+                direction-links="false"
+                class="pagination-sm" boundary-link-numbers="true" rotate="false"></ul>
+            <pre>Страница: {{events.current_page}} / {{events.total_pages}}</pre>
+        </div>
+    </div>
+
+
+</div>
+

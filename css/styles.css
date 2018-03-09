@@ -1,0 +1,165 @@
+.profile-user-img {
+    margin: 0 auto;
+    width: 171px;
+    padding: 3px;
+    border: 3px solid #d2d6de;
+}
+/*
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}*/
+
+
+.tabsDynamicHeight md-content {
+    background-color: white !important; }
+.tabsDynamicHeight md-content md-tabs {
+    background: #f6f6f6;
+    border: 1px solid #e1e1e1; }
+.tabsDynamicHeight md-content md-tabs md-tabs-wrapper {
+    background: white; }
+.tabsDynamicHeight md-content h1:first-child {
+    margin-top: 0; }
+
+
+.event-form.tabsDynamicHeight md-content {
+    background-color: white !important;
+}
+
+.event-form.tabsDynamicHeight md-content md-tabs {
+    border: 0px solid #e1e1e1;
+}
+
+.event-form.tabsDynamicHeight md-content md-tabs md-tabs-wrapper {
+    background: transparent;
+}
+
+.event-form label {
+    font-weight: 500;
+}
+
+.event-form md-input-container .md-errors-spacer {
+    display: none;
+}
+/*
+.event-form md-input-container:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.event-form md-input-container {
+    margin-top: 25px;
+}
+
+.event-form md-input-container.select-input {
+    margin-top: 20px;
+}
+
+.event-form .form-datetime md-input-container{
+    margin-top: 0;
+    margin-bottom: 0;
+}*/
+
+.event-form md-input-container .md-input {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+.event-form md-select .md-select-value {
+    border-bottom-color: rgba(0,0,0,0.5);
+}
+
+.event-form .md-button {
+    text-transform: none;
+}
+
+
+/* todo rename to tab-list or smth */
+/* Events List */
+.events-list {
+    margin-top: 25px;
+}
+
+.events-list.tabsDynamicHeight md-content {
+    background-color: transparent !important;
+}
+
+.events-list.tabsDynamicHeight md-content md-tabs {
+    background: transparent;
+    border: 0px solid #e1e1e1;
+}
+
+.tabsDynamicHeight md-content md-tabs md-tabs-wrapper {
+    background: transparent;
+}
+
+.drop-box {
+    background: #F8F8F8;
+    border: 5px dashed #DDD;
+    width: 350px;
+    text-align: center;
+    padding: 50px 10px;
+}
+
+@media (max-width: 968px) {
+    .drop-box {
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+
+/* image upload */
+
+.progress {
+    line-height: 15px;
+}
+
+.progress {
+    display: inline-block;
+    width: 100%;
+    border: 0;
+    margin-bottom: 0;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+    padding: 3px 5px;
+}
+
+table.audio-preview {
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+table.audio-preview tr td {
+    vertical-align: middle;
+}
+
+table.audio-preview .file-name {
+    display: inline-block;
+}
+
+table.audio-preview .fa {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+table.audio-preview .edit-track.form-control {
+    display: inline-block;
+    width: 80%;
+}
+
+form .footer {
+    margin-top: 45px;
+}
+
+.deleteConfirmation {
+    min-width: 50px;
+}
+
+.dashboard-count {
+    color: white;
+}

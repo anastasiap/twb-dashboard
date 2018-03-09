@@ -1,0 +1,128 @@
+<div>
+    <div mc-notification notification="users.notification"></div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Пользователи</h2>
+        </div><!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUser">Добавить</button>
+        </div>
+
+        <!-- modal -->
+        <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="addUserLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Добавить пользователя</h4>
+                    </div>
+                    <div class="modal-body">
+                        <!-- form begin -->
+                        <div class="box box-info">
+
+                            <!-- /.box-header -->
+                            <!-- form start -->
+                            <form class="form-horizontal" name="userForm" novalidate>
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Полное имя</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" ng-model="users.current.fullname" placeholder="Иванов Иван" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="email" class="form-control" placeholder="Email" ng-model="users.current.email" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" placeholder="Password" ng-model="users.current.password" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Должность</label>
+
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" placeholder="Впередсмотрящий..." ng-model="users.current.user_title" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Роль</label>
+
+                                        <div class="col-sm-10">
+                                            <select class="form-control" name="role"  ng-model="users.current.role" required>
+                                                <option value="admin">Администратор</option>
+                                                <option value="editor">Редактор</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" ng-model="users.current.locked" value="Y"> Заблокирован
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                                <div class="box-footer">
+                                    <button ng-click="users.userCancel()" type="submit" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                                    <button ng-disabled="userForm.$invalid" ng-click="users.userAdd(users.current)" type="submit" class="btn btn-success" data-dismiss="modal">Сохранить</button>
+                                </div>
+                                <!-- /.box-footer -->
+                            </form>
+                        </div>
+                        <!-- /form begin -->
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /modal -->
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-sm">
+                <thead>
+                <tr class="table-active">
+                    <th>Полное имя</th>
+                    <th>Email</th>
+                    <th>Роль</th>
+                    <th>Должность</th>
+                    <th>Заблокирован</th>
+                    <th>Дата создания</th>
+                    <th>Редакт.</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="user in users.list | orderBy:'id'">
+                    <th scope="row">{{user.fullname}}</th>
+                    <td>{{user.email}}</td>
+                    <td>{{user.role}}</td>
+                    <td>{{user.user_title}}</td>
+                    <td>
+                        <md-switch ng-model="user.locked" aria-label="Switch" ng-change="users.userSwitch(user)" ng-true-value="'Y'" ng-false-value="'N'"></md-switch>
+                    </td>
+                    <td>{{user.created_date}}</td>
+                    <td><a ng-href="#!/users/{{user.id}}"><i class="fa fa-edit"></i></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> <!-- /row table -->
+
+</div> <!-- /controller -->

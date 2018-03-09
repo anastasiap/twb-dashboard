@@ -1,0 +1,53 @@
+<div>
+    <div mc-notification notification="news.notification"></div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Новости</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <a class="btn btn-primary" ng-href="#!/news/0" role="button">Добавить</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <table class="table table-sm">
+                <thead>
+                <tr class="table-active">
+                    <th>ID</th>
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Дата доб.</th>
+                    <th>Дата публ.</th>
+                    <th class="text-center">Опубликовано</th>
+                    <th class="text-center">Случайные новости</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="post in news.list | orderBy:'-id'">
+                    <th scope="row">{{post.id}}</th>
+                    <td>{{post.title}}</td>
+                    <td>{{post.fullname}}</td>
+                    <td>{{post.date_add}}</td>
+                    <td>{{post.date_pub}}</td>
+                    <td class="text-center"><i class="fa" ng-class="{{post.publish}} ? 'fa-check-circle' : 'fa-minus-circle'"></i></td>
+                    <td class="text-center"><i class="fa" ng-class="{{post.random_news}} ? 'fa-check-circle' : 'fa-minus-circle'"></i></td>
+                    <td class="text-center"><a ng-href="#!/news/{{post.id}}"><i class="fa fa-edit"></i></a></td>
+                    <td class="text-center"><div confirm-delete on-confirm="news.newsDelete(post.id)"></div></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> <!-- /row table -->
+    <div class="row-fluid">
+        <ul uib-pagination total-items="news.count_pages" ng-model="news.current_page" max-size="5"  direction-links="false" items-per-page="news.per_page"
+            class="pagination-sm" boundary-link-numbers="true" rotate="false"  ng-click="news.getNews(news.current_page)"></ul>
+        <pre>Страница: {{news.current_page}} / {{news.total_pages}}</pre>
+    </div>
+</div> <!-- /controller -->

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mcApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>TheWebBird Dashboard</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link href="css/angular-material.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Waves Effect Css -->
+    <link href="assets/AdminBSBMaterialDesign/plugins/node-waves/waves.css" rel="stylesheet" />
+    <!-- Animation Css -->
+    <link href="assets/AdminBSBMaterialDesign/plugins/animate-css/animate.css" rel="stylesheet" />
+    <!-- Morris Chart Css-->
+    <link href="assets/AdminBSBMaterialDesign/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <!-- Custom Css -->
+    <link href="assets/AdminBSBMaterialDesign/css/style.css" rel="stylesheet">
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="assets/AdminBSBMaterialDesign/css/themes/all-themes.css" rel="stylesheet" />
+
+
+</head>
+
+<body class="theme-red">
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="color:#fcf8e3" href="/">TheWebBird Dashboard</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-th-large fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#!/events">
+                                <div>
+                                    <i class="fa fa-microphone fa-fw"></i> Афиша
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#!/news">
+                                <div>
+                                    <i class="fa fa-list-alt fa-fw"></i> Новости
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#!/video">
+                                <div>
+                                    <i class="fa fa-film fa-fw"></i> Видеотека
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#!/audio">
+                                <div>
+                                    <i class="fa fa-music fa-fw"></i> Фонотека
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Профиль</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Настройки</a>
+                        <li><a href="#!/users"><i class="fa fa-users fa-fw"></i> Пользователи</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href id="logout"><i class="fa fa-sign-out fa-fw"></i> Выход</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+        </nav>
+
+        <div class="container">
+            <div ng-view></div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                  <p class="text-muted text-right">twb-dashboard</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="js/angular-animate.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/angular-aria.min.js"></script>
+    <script src="js/angular-messages.min.js"></script>
+    <script src="js/ng-file-upload.min.js"></script>
+
+    <script src="js/angular-material.min.js"></script>
+
+    <script src="app/app.js"></script>
+
+
+    <!-- re-factor -->
+    <script src="app/common/common.module.js"></script>
+    <script src="app/common/common.service.js"></script>
+    <script src="app/common/common.constants.js"></script>
+    <script src="app/common/directives/directives.module.js"></script>
+    <script src="app/common/directives/confirmDelete.js"></script>
+    <script src="app/common/directives/mcNotification.js"></script>
+    <script src="app/common/directives/eventForm.js"></script>
+    <script src="app/common/directives/dashboardPanel.js"></script>
+    <script src="app/common/directives/plugins.js"></script>
+
+    <script src="app/dashboard/dashboard.module.js"></script>
+    <script src="app/dashboard/dashboard.ctrl.js"></script>
+
+    <script src="app/events/events.module.js"></script>
+    <script src="app/events/events.ctrl.js"></script>
+
+    <script src="app/news/news.module.js"></script>
+    <script src="app/news/news.ctrl.js"></script>
+    <script src="app/news/news-edit.ctrl.js"></script>
+
+    <script src="app/audio/audio.module.js"></script>
+    <script src="app/audio/audio.ctrl.js"></script>
+    <script src="app/audio/audio-edit.ctrl.js"></script>
+
+    <script src="app/video/video.module.js"></script>
+    <script src="app/video/video.ctrl.js"></script>
+    <script src="app/video/video-edit.ctrl.js"></script>
+
+    <script src="app/categories/categories.module.js"></script>
+    <script src="app/categories/categories.ctrl.js"></script>
+    <script src="app/categories/categories-edit.ctrl.js"></script>
+
+    <script src="app/bands/bands.module.js"></script>
+    <script src="app/bands/bands.ctrl.js"></script>
+    <script src="app/bands/bands-edit.ctrl.js"></script>
+
+    <script src="app/clubs/clubs.module.js"></script>
+    <script src="app/clubs/clubs.ctrl.js"></script>
+    <script src="app/clubs/clubs-edit.ctrl.js"></script>
+
+    <script src="app/users/users.module.js"></script>
+    <script src="app/users/users.ctrl.js"></script>
+    <script src="app/users/users-edit.ctrl.js"></script>
+
+    <!-- theme -->
+    <!-- Select Plugin Js -->
+    <script src="assets/AdminBSBMaterialDesign/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="assets/AdminBSBMaterialDesign/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="assets/AdminBSBMaterialDesign/plugins/node-waves/waves.js"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="assets/AdminBSBMaterialDesign/plugins/jquery-countto/jquery.countTo.js"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="assets/AdminBSBMaterialDesign/plugins/raphael/raphael.min.js"></script>
+    <script src="assets/AdminBSBMaterialDesign/plugins/morrisjs/morris.js"></script>
+
+    <!-- ChartJs -->
+    <script src="assets/AdminBSBMaterialDesign/plugins/chartjs/Chart.bundle.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.js"></script>
+    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.time.js"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="assets/AdminBSBMaterialDesign/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+    <!-- Custom Js -->
+    <!--<script src="js/admin.js"></script>
+    <script src="js/pages/index.js"></script>-->
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<div>
+    <div mc-notification notification="users.notification"></div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ol class="breadcrumb">
+                <li><a ng-href="/admin">Home</a></li>
+                <li><a ng-href="#!users">Пользователи</a></li>
+                <li class="active">{{users.current.title}}</li>
+            </ol>
+        </div><!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Пользователь: {{users.current.fullname}}</h2>
+        </div><!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- form begin -->
+            <div class="box box-info">
+
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form class="form-horizontal" name="userForm" novalidate>
+                    <div class="box-body">
+                        <div class="form-group" ngf-select="users.upload($file)" ngf-size="{width: 171, height: 200, quality: 0.9}">
+                            <img class="profile-user-img img-responsive img-circle" ngf-thumbnail="users.current.avatar_link || '/images/default.png'" alt="Загрузить аватарку" title="Загрузить аватарку"
+                                 ng-model="users.current.profile_foto">
+                            <div class="col-sm-10">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Полное имя</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="users.current.fullname" placeholder="Иванов Иван" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" placeholder="Email" ng-model="users.current.email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword3" class="col-sm-2 control-label">Пароль</label>
+
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" placeholder="Password" ng-model="users.current.password" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Должность</label>
+
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Впередсмотрящий..." ng-model="users.current.user_title" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail3" class="col-sm-2 control-label">Роль</label>
+
+                            <div class="col-sm-10">
+                                <select class="form-control" name="role"  ng-model="users.current.role" required>
+                                    <option value="admin">Администратор</option>
+                                    <option value="editor">Редактор</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <md-checkbox ng-model="users.current.locked" aria-label="Checkbox 2" ng-true-value="'Y'" ng-false-value="'N'">Заблокирован
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button ng-click="users.goToPath('/users')" type="submit" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                        <button ng-disabled="userForm.$invalid" ng-click="users.userSave(users.current)" type="submit" class="btn btn-success" data-dismiss="modal">Сохранить</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /form begin -->
+        </div>
+
+    </div>
+    <!-- /modal -->
+
+</div>
+
+</div> <!-- /controller -->

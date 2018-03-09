@@ -1,0 +1,59 @@
+<div>
+    <div mc-notification notification="cats.notification"></div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ol class="breadcrumb">
+                <li><a ng-href="/admin">Home</a></li>
+                <li><a ng-href="#!categories">Категории</a></li>
+                <li class="active">{{cats.current.title}}</li>
+            </ol>
+        </div><!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Категория: {{cats.current.title}}</h2>
+        </div><!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- form begin -->
+            <div class="box box-info">
+
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form class="form-horizontal" name="catsForm" novalidate>
+                    <div class="box-body">
+
+                        <div class="form-group">
+                            <label for="inputTitle" class="col-sm-2 control-label">Название</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" ng-model="cats.current.title" placeholder="Музыка..." required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputSort" class="col-sm-2 control-label">Вес сортировки</label>
+                            <div class="col-sm-2">
+                                <input type="text" class="form-control" ng-model="cats.current.sort_weight" required>
+                            </div>
+                        </div>
+
+                        <div class="box-footer">
+                            <button ng-click="cats.goToPath('/categories')" type="submit" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                            <button ng-disabled="catsForm.$invalid" ng-click="cats.catSave(cats.current)" type="submit" class="btn btn-success" data-dismiss="modal">Сохранить</button>
+                        </div>
+                    </div>
+                    <!-- /.box-footer -->
+                </form>
+            </div>
+            <!-- /form begin -->
+        </div>
+
+    </div>
+    <!-- /modal -->
+
+</div>
+
+</div> <!-- /controller -->

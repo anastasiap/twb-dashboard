@@ -1,0 +1,132 @@
+<div>
+    <div mc-notification notification="ctrl.notification"></div>
+    <div class="row">
+        <div class="col-lg-12">
+            <ol class="breadcrumb">
+                <li><a ng-href="/admin">Home</a></li>
+                <li><a ng-href="#!news">Новости</a></li>
+                <li class="active">{{ctrl.current.title}}</li>
+            </ol>
+        </div><!-- /.col-lg-12 -->
+    </div>
+
+    <div class="container-fluid">
+        <!-- form start -->
+        <form class="form-horizontal" name="newsForm" novalidate>
+
+            <div class="form-group">
+                <label for="newsTitle" class="col-sm-2 control-label">Название:</label>
+                <div class="col-sm-8 col-lg-8">
+                    <input id="newsTitle" type="text" class="form-control" ng-model="ctrl.current.title" placeholder="Название..." required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAuthor" class="col-sm-2 control-label">Автор</label>
+                <div class="col-sm-4 col-lg-4">
+                    <select class="form-control" id="inputAuthor" name="role"  ng-model="ctrl.current.author"
+                            ng-options="author.id as author.fullname for author in  ctrl.authors" required>
+                    </select>
+                </div>
+                <div class="col-sm-4 col-lg-4 checkbox">
+                    <label for="disableComments">
+                        <md-checkbox id="disableComments" ng-model="ctrl.current.comments_disable" aria-label="Checkbox1"
+                                     ng-true-value="1" ng-false-value="0">Запретить комментарии?</md-checkbox>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="newsCategory" class="col-sm-2 control-label">Категория</label>
+                <div class="col-sm-4 col-lg-4">
+                    <select id="newsCategory" class="form-control" name="role"  ng-model="ctrl.current.category"
+                            ng-options="category.id as category.title for category in  ctrl.categories" required>
+                    </select>
+                </div>
+
+                <div class="col-sm-4 col-lg-4 checkbox">
+                    <label for="randomNews">
+                        <md-checkbox id="randomNews" ng-model="ctrl.current.random_news" aria-label="Checkbox2"
+                                     ng-true-value="1" ng-false-value="0">Случайные новости?</md-checkbox>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pubDate" class="col-sm-2 control-label">Дата публикации:</label>
+                <div class="col-sm-4 col-lg-4">
+                    <input id="pubDate" type="date" class="form-control" ng-model="ctrl.current.date_pub">
+                </div>
+                <div class="col-sm-4 col-lg-4 checkbox">
+                    <label for="isPublished">
+                        <md-checkbox id="isPublished" ng-model="ctrl.current.publish" aria-label="Checkbox3"
+                                     ng-true-value="1" ng-false-value="0">Опубликовать?</md-checkbox>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mainFoto" class="col-sm-2 control-label">Основное фото:</label>
+                <div class="col-sm-4 col-lg-4" ngf-select="ctrl.upload($file)" ngf-size="{width: 171, height: 200, quality: 0.9}">
+                    <img id="mainFoto" class="profile-user-img img-responsive img-thumbnail" ngf-thumbnail="ctrl.current.main_foto_link || '/images/default.png'" alt="Загрузить фото" title="Загрузить фото"
+                         ng-model="ctrl.current.main_foto_url">
+                    <div class="col-sm-10">
+                    </div>
+                </div>
+                <div class="col-sm-4 col-lg-4 checkbox">
+                    <label for="loadImage">
+                        <button id="loadImage" class="btn btn-info" ng-click="ctrl.loadModal()" data-toggle="modal" data-target="#myModal">Выбрать на сервере</button></a>
+                    </label>
+                </div>
+                <!-- MODAL -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Файлы уже загруженные на сервер</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="container-fluid" >
+                                    <div class="col-lg-3 col-md-3 col-sm-3" ng-repeat="imgs in ctrl.images_list">
+                                        <a href="#" ng-click="ctrl.setMainFotoUrl(imgs.main_foto_url)" data-dismiss="modal" >
+                                            <img ng-src="{{ imgs.main_foto_url }}" class="img-thumbnail" style="width: 140px; height: 140px;">
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /MODAL -->
+            </div>
+
+            <div class="form-group">
+                <label for="newsQuote" class="col-sm-2 control-label">Цитата:</label>
+                <div class="col-sm-6 col-lg-6">
+                        <textarea id="newsQuote" cols="10" rows="4" class="form-control" ng-model="ctrl.current.blockquote" placeholder="Цитата для выделения..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12 col-lg-12">
+                    <textarea cols="10" rows="10" ng-model="ctrl.current.body" class="ck-editor"></textarea>
+                </div>
+            </div>
+
+            <div class="footer">
+                <button ng-click="ctrl.goToPath('/news')" type="submit" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button ng-disabled="newsForm.$invalid"
+                        ng-click="ctrl.saveNews(ctrl.current, ctrl.current.id)"
+                        type="submit" class="btn btn-success" data-dismiss="modal">Сохранить</button>
+            </div>
+
+        </form>
+    </div><!-- /container-fluid -->
+
+</div> <!-- /controller -->

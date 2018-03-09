@@ -1,0 +1,123 @@
+<div>
+    <div mc-notification notification="audio.notification"></div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <ol class="breadcrumb">
+                <li><a ng-href="/admin">Home</a></li>
+                <li><a ng-href="#!audio">Аудиотека</a></li>
+                <li class="active">{{audio.current.title}}</li>
+            </ol>
+        </div><!-- /.col-lg-12 -->
+    </div>
+
+    <div class="container-fluid">
+        <!-- form start -->
+        <form class="form-horizontal" name="audioForm" novalidate>
+
+            <div class="form-group">
+                <label for="audioTitle" class="col-sm-2 control-label">Название:</label>
+                <div class="col-sm-8 col-lg-8">
+                    <input id="audioTitle" type="text" class="form-control" ng-model="audio.current.title" placeholder="..." required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAuthor" class="col-sm-2 control-label">Бэнд</label>
+                <div class="col-sm-4 col-lg-4">
+                    <input id="audioBand" type="text" class="form-control" ng-model="audio.current.band" placeholder="..." required>
+                </div>
+                <div class="col-sm-4 col-lg-4 checkbox">
+                    <label for="defaultPlayer">
+                        <md-checkbox id="defaultPlayer" ng-model="audio.current.play" aria-label="Checkbox3"
+                                     ng-true-value="1" ng-false-value="0">Дефолтный плейлист?</md-checkbox>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAuthor" class="col-sm-2 control-label">Автор</label>
+                <div class="col-sm-4 col-lg-4">
+                    <select class="form-control" id="inputAuthor" name="role"  ng-model="audio.current.author"
+                            ng-options="author.id as author.fullname for author in  audio.authors" required>
+                    </select>
+                </div>
+                <div class="col-sm-4 col-lg-4 checkbox">
+                    <label for="disableComments">
+                        <md-checkbox id="disableComments" ng-model="audio.current.comments_disable" aria-label="Checkbox1"
+                                     ng-true-value="1" ng-false-value="0">Запретить комментарии?</md-checkbox>
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="pubDate" class="col-sm-2 control-label">Дата публикации:</label>
+                <div class="col-sm-4 col-lg-4">
+                    <input id="pubDate" type="date" class="form-control" ng-model="audio.current.date_pub">
+                </div>
+                <div class="col-sm-4 col-lg-4 checkbox">
+                    <label for="isPublished">
+                        <md-checkbox id="isPublished" ng-model="audio.current.publish" aria-label="Checkbox3"
+                                     ng-true-value="1" ng-false-value="0">Опубликовать?</md-checkbox>
+                    </label>
+                </div>
+            </div>
+
+            <div ng-show="audio.plSaved">
+                <div class="form-group">
+                    <label for="tracks" class="col-sm-2 control-label">Треки:</label>
+                    <div class="col-sm-12 col-md-8">
+                        <div ngf-select="audio.upload($files)"
+                            ngf-drop="true"
+                            ng-model="audio.current.file"
+                            ngf-multiple="true"
+                            class="drop-box">
+                            Click here to upload files or Drop File
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <table class="table table-responsive audio-preview">
+                            <tr ng-show="audio.current.file">
+                                <th>Название трека</th>
+                                <th>Загружено</th>
+                                <th>Воспроизвести</th>
+                            </tr>
+                            <tr ng-repeat="f in audio.current.file track by $index">
+                                <td ng-switch="audio.mode[$index]">
+                                    <i ng-click="audio.editMode('edit', $index)" class="fa fa-edit"></i>
+                                    <input ng-switch-when="edit" ng-blur="audio.editMode('view', $index)" class="edit-track form-control"  ng-model="f.mcName">
+                                    <div ng-switch-when="view" class="file-name">{{f.mcName}} </div>
+                                    <div ng-switch-default class="file-name">{{f.name}} {{f.$errorParam}}</div>
+                                </td>
+                                <td width="150px"><span class="progress" ng-show="f.progress >= 0">
+                                    <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
+                                </span>
+                                </td>
+                                <td><audio controls="" ngf-src="!f.$error && f"></audio></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12 col-lg-12">
+                        <textarea ng-model="audio.current.body" class="ck-editor"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <button ng-click="audio.goToPath('/audio')" type="submit" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                <button ng-disabled="audioForm.$invalid"
+                        ng-click="audio.savePlaylist(audio.current, audio.current.id)"
+                        type="submit" class="btn btn-success">Сохранить</button>
+            </div>
+
+        </form>
+    </div><!-- /container-fluid -->
+
+</div>
+
