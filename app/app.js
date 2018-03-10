@@ -28,7 +28,7 @@
         'Users',
         'Categories',
         'Bands',
-        /*'News',*/
+        'News',
         /*'Video',*/
         /*'Audio',*/
         'Events',
