@@ -2,20 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d893b-7b9a-474f-ae33-6102de914cd1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/audio/audio-edit.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/audio/audio-edit.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/audio/audio.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/audio/audio.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/audio/audio.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/bands/bands-edit.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/bands/bands-edit.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/bands/bands.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/bands/bands.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/bands/bands.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/categories/categories-edit.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/categories/categories-edit.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/clubs/clubs-edit.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/clubs/clubs-edit.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/clubs/clubs.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/clubs/clubs.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/clubs/clubs.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/users/users-edit.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/users/users-edit.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/video/video-edit.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/video/video-edit.tmpl.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/video/video.ctrl.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/video/video.module.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/video/video.tmpl.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/categories/categories.ctrl.js" afterPath="$PROJECT_DIR$/app/categories/categories.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/categories/categories.tmpl.html" afterPath="$PROJECT_DIR$/app/categories/categories.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/common/directives/plugins.js" afterPath="$PROJECT_DIR$/app/common/directives/plugins.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dashboard/dashboard.ctrl.js" afterPath="$PROJECT_DIR$/app/dashboard/dashboard.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/dashboard/dashboard.tmpl.html" afterPath="$PROJECT_DIR$/app/dashboard/dashboard.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/news/news-edit.ctrl.js" afterPath="$PROJECT_DIR$/app/news/news-edit.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/news/news-edit.tmpl.html" afterPath="$PROJECT_DIR$/app/news/news-edit.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/news/news.ctrl.js" afterPath="$PROJECT_DIR$/app/news/news.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/news/news.tmpl.html" afterPath="$PROJECT_DIR$/app/news/news.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/users/users.ctrl.js" afterPath="$PROJECT_DIR$/app/users/users.ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/users/users.module.js" afterPath="$PROJECT_DIR$/app/users/users.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.js" afterPath="$PROJECT_DIR$/app/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/common/common.constants.js" afterPath="$PROJECT_DIR$/app/common/common.constants.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/users/users.tmpl.html" afterPath="$PROJECT_DIR$/app/users/users.tmpl.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="$PROJECT_DIR$/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="twb-dashboard.iws" />
@@ -50,8 +64,58 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="47" column="38" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="38" />
+            <state relative-caret-position="263">
+              <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.ctrl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/users/users.ctrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.tmpl.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/users/users.tmpl.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2288">
+              <caret line="102" column="168" selection-start-line="102" selection-start-column="168" selection-end-line="102" selection-end-column="168" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.constants.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/common/common.constants.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1320">
+              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="common.service.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/common/common.service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,7 +124,7 @@
       <file leaf-file-name="news-edit.ctrl.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/news/news-edit.ctrl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-88">
+            <state relative-caret-position="-748">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
@@ -72,26 +136,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
               <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="categories-edit.ctrl.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/categories/categories-edit.ctrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="201" column="35" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -144,10 +188,8 @@
         <option value="$PROJECT_DIR$/app/common/directives/confirmDelete.js" />
         <option value="$PROJECT_DIR$/app/common/directives/mcNotification.js" />
         <option value="$PROJECT_DIR$/db.json" />
-        <option value="$PROJECT_DIR$/app/common/common.constants.js" />
         <option value="$PROJECT_DIR$/app/common/directives/dashboardPanel.html" />
         <option value="$PROJECT_DIR$/app/events/events.tmpl.html" />
-        <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/app/categories/categories-edit.tmpl.html" />
         <option value="$PROJECT_DIR$/app/common/common.service.js" />
         <option value="$PROJECT_DIR$/app/news/news.module.js" />
@@ -158,16 +200,18 @@
         <option value="$PROJECT_DIR$/app/users/users.module.js" />
         <option value="$PROJECT_DIR$/app/categories/categories.ctrl.js" />
         <option value="$PROJECT_DIR$/app/users/users.ctrl.js" />
-        <option value="$PROJECT_DIR$/app/users/users.tmpl.html" />
         <option value="$PROJECT_DIR$/app/categories/categories.tmpl.html" />
         <option value="$PROJECT_DIR$/app/news/news.tmpl.html" />
         <option value="$PROJECT_DIR$/app/news/news.ctrl.js" />
         <option value="$PROJECT_DIR$/app/news/news-edit.tmpl.html" />
         <option value="$PROJECT_DIR$/app/dashboard/dashboard.tmpl.html" />
         <option value="$PROJECT_DIR$/app/dashboard/dashboard.ctrl.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/styles.css" />
         <option value="$PROJECT_DIR$/app/news/news-edit.ctrl.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/app/common/common.constants.js" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/app/users/users.tmpl.html" />
       </list>
     </option>
   </component>
@@ -346,6 +390,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twb-dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twb-dashboard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="categories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -466,24 +528,34 @@
       <workItem from="1520698863726" duration="15070000" />
       <workItem from="1520716811764" duration="15139000" />
       <workItem from="1520789521447" duration="32115000" />
-      <workItem from="1520929884043" duration="16275000" />
+      <workItem from="1520929884043" duration="16801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92599000" />
+    <option name="totallyTimeSpent" value="93125000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19080338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299595" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -491,7 +563,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -619,22 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/common.constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-419">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/common.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="108" column="25" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/audio/audio-edit.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -699,14 +754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/angular-material.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
@@ -739,14 +786,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/users/users.tmpl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/bands/bands-edit.tmpl.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -759,14 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="725">
           <caret line="51" column="17" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/users/users.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -811,14 +842,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/events/events.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2090">
@@ -851,14 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/news/news-edit.ctrl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/categories/categories.ctrl.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -871,6 +886,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/news/news-edit.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-748">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/common/common.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/common/common.constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/users/users.ctrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/users/users.tmpl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2288">
+          <caret line="102" column="168" selection-start-line="102" selection-start-column="168" selection-end-line="102" selection-end-column="168" />
           <folding />
         </state>
       </provider>

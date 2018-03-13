@@ -1,25 +1,6 @@
 (function() {
     'use strict';
 
-    /*var app = angular.module('testmodule', [
-        'ngRoute'
-    ]);
-
-    app.controller('ctrls', function(){
-        console.log('sdifs');
-    });
-
-    app.config(function($routeProvider) {
-        $routeProvider
-            .when('/', {
-                template: '<h1>1111111</h1>',
-                controller: 'ctrls'
-            })
-            .otherwise({
-                redirectTo: '/'
-            });
-    });*/
-
     var app = angular.module('mcApp', [
         'ngRoute',
         'firebase',
@@ -28,10 +9,7 @@
         'Dashboard',
         'Users',
         'Categories',
-        'Bands',
         'News',
-        /*'Video',*/
-        /*'Audio',*/
         'Events',
         'mcDirectives',
         'ui.bootstrap'
@@ -65,29 +43,14 @@
                 controller: 'audioCtrl',
                 controllerAs: 'audio'
             })
-            .when('/audio/:id', {
-                templateUrl: 'app/audio/audio-edit.tmpl.html',
-                controller: 'audioEditCtrl',
-                controllerAs: 'audio'
-            })
             .when('/users', {
                 templateUrl: 'app/users/users.tmpl.html',
                 controller: 'usersCtrl',
                 controllerAs: 'users'
             })
-            .when('/users/:id', {
-                templateUrl: 'app/users/users-edit.tmpl.html',
-                controller: 'usersEditCtrl',
-                controllerAs: 'users'
-            })
             .when('/categories', {
                 templateUrl: 'app/categories/categories.tmpl.html',
                 controller: 'catCtrl',
-                controllerAs: 'cats'
-            })
-            .when('/categories/:id', {
-                templateUrl: 'app/categories/categories-edit.tmpl.html',
-                controller: 'catCtrlEdit',
                 controllerAs: 'cats'
             })
             .otherwise({

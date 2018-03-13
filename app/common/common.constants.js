@@ -6,6 +6,7 @@
         .factory('constants', constants);
 
     function constants () {
+        /* todo update with firebase api */
         var apiURLs = {
             dashboard: 'http://localhost:3020/dashboard/',
 
