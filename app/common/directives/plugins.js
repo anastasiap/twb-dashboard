@@ -12,7 +12,7 @@
                     var data = [];
                     var ck = CKEDITOR.replace(elm[0], {
                         extraPlugins: 'uploadimage,image2,embed,autoembed',
-                        height: 350,
+                        height: 200,
                         // Upload images to a CKFinder connector (note that the response type is set to JSON).
                         uploadUrl: '/ckfinder/list',//core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
 

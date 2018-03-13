@@ -13,8 +13,7 @@
                 ds.notification = dataService.notificationStatus;
                 ds.status = dataService.errorNotif;
                 ds.news = [];
-                var authors = []; // todo add authors from admin side
-
+                var authors = [];
             getNews();
 
             function getNews() {
@@ -33,6 +32,7 @@
                 var items = Array.isArray(data) ? data : [data];
 
                 return items.map(function(item){
+                    item.date_pub = item.date_pub ? item.date_pub : new Date().toLocaleDateString("en-GB");
                     item.author = authors[item.author].name;
                     return item;
                 });

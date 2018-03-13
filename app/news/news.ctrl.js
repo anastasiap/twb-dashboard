@@ -5,36 +5,44 @@
         .module('News')
         .controller('newsCtrl', newsCtrl);
 
-        newsCtrl.$inject = ['dataService', 'constants'];
+        newsCtrl.$inject = ['dataService', 'constants', '$firebaseArray'];
 
-        function newsCtrl(dataService, constants) {
+        function newsCtrl(dataService, constants, $firebaseArray) {
             var news = this, api = constants.apiURLs;
-                news.list = getNews();
-                news.current = {};
                 news.notification = dataService.notificationStatus;
                 news.status = dataService.errorNotif;
+                news.list = [];
+                news.current = {};
+                news.paging = {};
 
-                news.getNews = getNews;
-                news.newsDelete = newsDelete;
-
+            initCtrl();
+            
             /* implementation */
-            function getNews() {
-                dataService.getItems(api.news).then(function(data){
-                    console.log(data.list);
-
-                    news.list = data.list;
-                    news.count_pages = data.count_pages;
-                    news.total_pages = data.total_pages;
-                    news.per_page = data.per_page;
-                    news.current_page = data.current_page;
-                }).catch(function(err){ news.notification = news.status(err) });
+            function initCtrl() {
+                $firebaseArray(dataService.getRef("authors")).$loaded()
+                    .then(function(data){ news.authors = data })
+                    .then(function() {
+                        $firebaseArray(dataService.getRef("news")).$loaded().then(function(data){
+                            news.list = setData(data);
+                            news.paging.current_page = 1;
+                            news.paging.total_pages = 1;
+                            news.paging.count_pages = 1;
+                            news.paging.per_page = 20;
+                        })
+                    });
+                $firebaseArray(dataService.getRef("category")).$loaded()
+                    .then(function(data){ news.categories = data });
             }
 
-            function newsDelete(id) {
-                return dataService.deleteItem(api.newsItem + id + '.json').then(function(data) {
-                    news.notification = news.status(data);
-                    getNews();
-                }).catch(function(err){ news.notification = news.status(err) });
-            };
+
+            function setData(data) {
+                var items = Array.isArray(data) ? data : [data];
+
+                return items.map(function(item){
+                    item.date_pub = item.date_pub ? item.date_pub : new Date().toLocaleDateString("en-GB");
+                    item.author_name = news.authors[item.author].name;
+                    return item;
+                });
+            }
         }
 })();

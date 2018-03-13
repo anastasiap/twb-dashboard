@@ -184,3 +184,22 @@ form .footer {
 .dashboard-count {
     color: white;
 }
+
+
+[type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+     position: relative !important;
+     left: 0 !important;;
+     opacity: 1 !important;;
+}
+
+.bg-light-grey.info-box a, a.disabled {
+    cursor: default;
+    text-decoration: none;
+    color: #ddd !important;
+    font-weight: 400;
+}
+
+.bg-light-grey.info-box a .number  {
+    color: #ddd !important;
+    font-weight: 400;
+}

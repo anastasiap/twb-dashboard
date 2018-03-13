@@ -5,49 +5,33 @@
         .module('Users')
         .controller('usersCtrl', usersCtrl);
 
-    usersCtrl.$inject = ['dataService', 'constants'];
+    usersCtrl.$inject = ['dataService', 'constants', '$firebaseArray'];
 
-    function usersCtrl(dataService, constants) {
-        var users = this, api = constants.apiURLs;
+    function usersCtrl(dataService, constants, $firebaseArray) {
+        var authors = this, api = constants.apiURLs;
+        authors.notification = dataService.notificationStatus;
+        authors.status = dataService.errorNotif;
 
-            users.list = [];
-            users.current = {};
+        authors.list = getAuthors();
+        authors.current = {};
 
-            users.userCancel = userCancel;
-            users.userAdd = userAdd;
-            users.userSwitch = userSwitch;
+        authors.addNewItem = addNewItem;
 
-            users.notification = dataService.notificationStatus;
-            users.status = dataService.errorNotif;
 
-            initCtrl();
+        /* implementation */
+        function getAuthors() {
+            return $firebaseArray(dataService.getRef("authors"));
+        };
 
-            /* Implementation */
-            function initCtrl() {
-                dataService.getUsers().then(function(data){  users.list = data; });
-            }
+        function addNewItem() {
+            authors.list.$add(authors.current).then(function(ref) {
+                console.log(ref);
+                var id = ref.key;
+                console.log("added record with id " + id);
+                authors.list.$indexFor(id); // returns location in the array
 
-            function userAdd(newuser) {
-                this.newuser = newuser;
-
-                dataService.addItem(api.users, newuser).then(function(data) {
-                    users.notification = users.status(data);
-
-                    newuser.id = data.id;
-                    users.list.push(newuser);
-                    users.current = {};
-                }).catch(function(err){ users.notification = users.status(err) });
-            };
-
-            function userSwitch(user) {
-                dataService.addItem(api.usersChange, user).then(function(data) {
-                    users.notification = users.status(data);
-                }).catch(function(err){ users.notification = users.status(err) });
-            };
-
-            function userCancel() {
-                users.current = {};
-            };
+            });
+        }
     }
 
 })();

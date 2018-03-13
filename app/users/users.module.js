@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('Users', []);
+    angular.module('Users', ['ngMaterial']);
 })();

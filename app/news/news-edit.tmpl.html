@@ -51,7 +51,7 @@
                         <label for="pubDate" class="col-sm-2 form-control-label">Publish date</label>
                         <div class="col-sm-4 col-lg-4">
                             <div class="form-line">
-                                <input id="pubDate" type="text" class="form-control" ng-model="ctrl.current.date_pub | date:'medium'">
+                                <input id="pubDate" type="text" class="form-control" ng-model="ctrl.current.date_pub">
                             </div>
                         </div>
                     </div>
@@ -99,22 +99,25 @@
 
                     <div class="form-group">
                         <label for="newsQuote" class="col-sm-2 form-control-label">Quote:</label>
-                        <div class="col-sm-6 col-lg-6">
-                            <textarea id="newsQuote" cols="10" rows="4" class="form-control" ng-model="ctrl.current.blockquote" placeholder=""></textarea>
+                        <div class="col-sm-4 col-lg-4">
+                            <div class="form-line">
+                                <textarea id="newsQuote" cols="10" rows="4" class="form-control" ng-model="ctrl.current.blockquote" placeholder=""></textarea>
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <div class="col-sm-12 col-lg-12">
-                            <textarea cols="10" rows="10" ng-model="ctrl.current.body" class="ck-editor"></textarea>
+                        <div class="col-sm-8 col-lg-8 col-lg-offset-2">
+                            <div class="form-line">
+                                <textarea cols="10" rows="10" ng-model="ctrl.current.body" class="ck-editor"></textarea>
+                            </div>
                         </div>
                     </div>
                     </div>
 
                     <div class="footer">
-                        <button ng-click="ctrl.goToPath('/news')" type="submit" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button ng-click="ctrl.addNewItem()"
-                                class="btn btn-success">Save</button>
+                        <button ng-click="ctrl.goToPath('/news')" type="submit" class="btn btn-secondary">Cancel</button>
+                        <button ng-click="ctrl.addNewItem()" class="btn btn-success">Save</button>
                     </div>
                 </form>
             </div>

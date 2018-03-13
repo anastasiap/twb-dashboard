@@ -14,6 +14,10 @@
 
 <section class="content">
     <div mc-notification notification="news.notification"></div>
+    <ol class="breadcrumb">
+        <li><a ng-href="#!/index.html">Home</a></li>
+        <li class="active"><a ng-href="#!/news">News</a></li>
+    </ol>
 
     <div class="card">
         <div class="header">
@@ -23,36 +27,28 @@
             <table class="table table-striped">
                 <thead>
                 <tr class="table-active">
-                    <th>ID</th>
+                    <th>Date</th>
                     <th>Title</th>
                     <th>Author</th>
-                    <th>Date added</th>
-                    <th>Date published</th>
-                    <th class="text-center">Published</th>
-                    <th class="text-center">Random news</th>
                     <th></th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="post in news.list | orderBy:'-id'">
-                    <th scope="row">{{post.id}}</th>
-                    <td>{{post.title}}</td>
-                    <td>{{post.fullname}}</td>
-                    <td>{{post.date_add}}</td>
                     <td>{{post.date_pub}}</td>
-                    <td class="text-center"><i class="fa" ng-class="{{post.publish}} ? 'fa-check-circle' : 'fa-minus-circle'"></i></td>
-                    <td class="text-center"><i class="fa" ng-class="{{post.random_news}} ? 'fa-check-circle' : 'fa-minus-circle'"></i></td>
-                    <td class="text-center"><a ng-href="#!/news/{{post.id}}"><i class="fa fa-edit"></i></a></td>
-                    <td class="text-center"><div confirm-delete on-confirm="news.newsDelete(post.id)"></div></td>
+                    <td>{{post.title}}</td>
+                    <td>{{post.author_name}}</td>
+                    <td class="text-center"><a ng-href="#!/news/{{post.$id}}"><i class="fa fa-edit"></i></a></td>
+                    <td class="text-center"><div confirm-delete on-confirm="news.list.$remove(post)"></div></td>
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
     <div>
-        <ul uib-pagination total-items="news.count_pages" ng-model="news.current_page" max-size="5"  direction-links="false" items-per-page="news.per_page"
+        <ul uib-pagination total-items="news.paging.count_pages" ng-model="news.paging.current_page" max-size="5"  direction-links="false" items-per-page="news.paging.per_page"
             class="pagination-sm" boundary-link-numbers="true" rotate="false"  ng-click="news.getNews(news.current_page)"></ul>
-        <pre>Страница: {{news.current_page}} / {{news.total_pages}}</pre>
+        <pre>Page: {{news.paging.current_page}} / {{news.paging.total_pages}}</pre>
     </div>
 </section> <!-- /controller -->
