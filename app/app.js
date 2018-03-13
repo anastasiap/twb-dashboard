@@ -22,6 +22,7 @@
 
     var app = angular.module('mcApp', [
         'ngRoute',
+        'firebase',
         'ngMaterial',
         'Common',
         'Dashboard',

@@ -7,25 +7,25 @@
 
     function constants () {
         var apiURLs = {
-            dashboard: 'http://localhost:3020/news/',
+            dashboard: 'http://localhost:3020/dashboard/',
 
-            news: '/api/news.json?p=',
-            newsItem: 'http://localhost:3020/news_list/',
-            postNews: '/api/news.json',
+            news: 'http://localhost:3020/news_list/',
+            newsItem: 'http://localhost:3020/news/',
+            postNews: 'http://localhost:3020/news/',
 
-            users: '/api/users.json',
+            users: 'http://localhost:3020/users/',
             user: '/api/users/',
             usersChange: '/api/users/switch.json',
 
-            categories: '/api/categories.json',
+            categories: 'http://localhost:3020/categories',
             categoriesItem: '/api/categories/',
 
             fileUpload: '/api/upload/file/',
             fileList: '/ckfinder/list',
 
-            events: 'http://localhost:3020/events/',
-            eventsPage: '/api/events/?p=',
-            eventsCity: '/api/events/?city=',
+            events: 'http://localhost:3020/eventgroup/',
+            eventsPage: 'http://localhost:3020/eventgroup?events?p=',
+            eventsCity: 'http://localhost:3020/eventgroup',
 
             video: '/api/video/',
             videoPage: '/api/video/?p=',

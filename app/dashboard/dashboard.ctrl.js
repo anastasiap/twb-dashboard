@@ -5,36 +5,38 @@
         .module('Dashboard')
         .controller('dashboardCtrl', dashboardCtrl);
 
-        dashboardCtrl.$inject = ['dataService', 'constants'];
+        dashboardCtrl.$inject = ['dataService', 'constants', '$firebaseObject', '$firebaseArray'];
 
-        function dashboardCtrl(dataService, constants) {
+        function dashboardCtrl(dataService, constants, $firebaseObject, $firebaseArray) {
             var ds = this, api = constants.apiURLs;
                 ds.path = constants.paths;
                 ds.notification = dataService.notificationStatus;
                 ds.status = dataService.errorNotif;
+                ds.news = [];
+                var authors = []; // todo add authors from admin side
 
-                ds.news = getNews();
-                ds.newsDelete = newsDelete;
-                ds.events = [];
-                ds.video = [];
-                ds.audio = [];
+            getNews();
 
             function getNews() {
-                dataService.getItems(api.dashboard).then(function(data){
-                    ds.news = data;
+                $firebaseArray(dataService.getRef("authors")).$loaded()
+                .then(function(data){ authors = dataService.mapItems(data)})
+                .then(function () {
+                    $firebaseArray(dataService.getRef("news")).$loaded().then(function(data){
+                        ds.news = setData(data);
+                    })
+                });
 
-                    /* TODO add api */
-                    ds.events.count = 28;
-                    ds.video.count = 2;
-                    ds.audio.count = 43;
-                }).catch(function(err){ ds.notification = ds.status(err) });
+                ds.count = $firebaseObject(dataService.getRef("dashboard"));
             }
 
-            function newsDelete(id) {
-                return dataService.deleteItem(api.newsItem + id + '.json').then(function(data) {
-                    ds.notification = ds.status(data);
-                    getNews();
-                }).catch(function(err){ ds.notification = ds.status(err) });
-            };
+            function setData(data) {
+                var items = Array.isArray(data) ? data : [data];
+
+                return items.map(function(item){
+                    item.author = authors[item.author].name;
+                    return item;
+                });
+            }
+
         }
 })();

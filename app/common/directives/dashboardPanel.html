@@ -1,22 +1,19 @@
-<div class="panel {{ color }}">
-    <div class="panel-heading">
-        <div class="row">
-            <div class="col-xs-3">
-                <i class="fa {{ icon }} fa-5x"></i>
-            </div>
-            <div class="col-xs-9 text-right">
-                <a href="{{ path }}"  class="dashboard-count">
-                    <div class="huge">{{ count }}</div>
-                    <div>{{ name }}</div>
-                </a>
-            </div>
-        </div>
+<div class="{{ color }} info-box">
+
+    <div class="icon">
+        <i class="fa {{ icon }} fa-3x"></i>
     </div>
-    <a href="{{ addItemPath }}">
-        <div class="panel-footer">
-            <span class="pull-left">{{ addItemTitle }}</span>
-            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div class="clearfix"></div>
-        </div>
-    </a>
+    <div class="content">
+        <a class="text" href="{{ path }}">
+            <div class="number count-to">{{ count }}</div>
+            <div>{{ name }}</div>
+        </a>
+    </div>
+
+    <span class="add-item-btn pull-right content">
+        <a class="font-bold col-white p-r-10" href="{{ addItemPath }}">
+            <i class="fa fa-plus fa-2x"></i>
+            <span>{{ addItemTitle }}</span>
+        </a>
+    </span>
 </div>

@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('News', ['ngFileUpload']);
+    angular.module('News', ['ngFileUpload', 'ngMaterial']);
 })();

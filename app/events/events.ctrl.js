@@ -10,6 +10,7 @@
     function eventsCtrl(dataService, constants, $route, $routeParams, $filter, $scope) {
         var events = this;
         var placesList = [], bandsList = [], tabs = { 'jam': 0,  'gig': 1 }, api = constants.apiURLs;
+            events.path = constants.paths;
 
             events.newGigForm = 'newGigForm';
             events.newJamForm = 'newJamForm';
@@ -36,7 +37,8 @@
         function getEvents(url) {
             dataService.getItems(url).then(function(data) {
 
-                console.log(data);
+                console.log('data.list', data.events.list);
+
                 placesList = dataService.mapItems(data.places);
                 bandsList = dataService.mapItems(data.bands);
 
@@ -52,7 +54,7 @@
         };
 
         function editEvent(id) {
-            dataService.getItems(api.events + id + '.json').then(function(data){
+            dataService.getItems(api.events + id).then(function(data){
                 events.jam = newEvent('jam');
                 events.gig = newEvent('gig');
 
@@ -65,7 +67,7 @@
         };
 
         function submitEvent(formName, event, id) {
-            var url = id ? api.events + id + '.json' : api.events;
+            var url = id ? api.events + id : api.events;
 
             event.date_to_string = $filter('date')(event.date, 'yyyy-MM-dd HH:mm');
 
@@ -79,7 +81,7 @@
         }
 
         function eventDelete(id) {
-            dataService.deleteItem(api.events + id + '.json').then(function(data) {
+            dataService.deleteItem(api.events + id).then(function(data) {
                 events.notification = events.status(data);
                 getEventsByParam(api.events, 'p', 1);
             }).catch(function(err){ events.notification = events.status(err) });

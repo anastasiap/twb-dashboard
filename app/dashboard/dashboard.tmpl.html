@@ -1,56 +1,40 @@
-<div>
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
-        </div><!-- /.col-lg-12 -->
-    </div>
+<aside class="sidebar p-t-35">
+    <dashboard-panel name="Events" icon="fa-microphone" path="{{ds.path.events}}" count="{{ds.count.event_count}}" add-item-path="{{ds.path.events}}" add-item-title="Add Event" color="bg-light-green"></dashboard-panel>
+    <dashboard-panel name="News" icon="fa-list-alt" path="{{ds.path.news}}" count="{{ds.count.news_count}}" add-item-path="{{ds.path.news + 0}}" add-item-title="Add News" color="bg-amber"></dashboard-panel>
+    <dashboard-panel name="Video" icon="fa-film" path="{{ds.path.video}}" count="{{ds.count.video_count}}" add-item-path="{{ds.path.video + 0}}" add-item-title="Add Video" color="bg-blue"></dashboard-panel>
+    <dashboard-panel name="Audio" icon="fa-music" path="{{ds.path.audio}}" count="{{ds.count.audio_count}}" add-item-path="{{ds.path.audio + 0 }}" add-item-title="Add Playlist" color="bg-deep-orange"></dashboard-panel>
+</aside>
 
-    <div class="row">
-        <div class="col-lg-3 col-md-6">
-            <dashboard-panel name="Афиша" icon="fa-microphone" path="{{ds.path.events}}" count="{{ds.events.count}}" add-item-path="{{ds.path.events}}" add-item-title="Добавить событие" color="panel-primary"></dashboard-panel>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <dashboard-panel name="Новости" icon="fa-list-alt" path="{{ds.path.news}}" count="{{ds.news.count}}" add-item-path="{{ds.path.news + 0}}" add-item-title="Добавить новость" color="panel-green"></dashboard-panel>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <dashboard-panel name="Видеотека" icon="fa-film" path="{{ds.path.video}}" count="{{ds.video.count}}" add-item-path="{{ds.path.video + 0}}" add-item-title="Добавить видео" color="panel-yellow"></dashboard-panel>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <dashboard-panel name="Фонотека" icon="fa-music" path="{{ds.path.audio}}" count="{{ds.audio.count}}" add-item-path="{{ds.path.audio + 0 }}" add-item-title="Добавить плейлист" color="panel-red"></dashboard-panel>
-        </div>
-    </div>
+<section class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="header">
+                <h2>Latest news</h2>
+            </div>
+<ul>        <li ng-repeat="author in ds.authors">{{ author.name }}</li></ul>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Последние новости</h1>
+            <div class="body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="table-active">
+                            <th>Date published</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="list in ds.news | orderBy:'-id'">
+                            <td>{{list.date_pub}}</td>
+                            <th>{{list.title}}</th>
+                            <td>{{list.author}}</td>
+                            <td><a href="#!/news/{{list.$id}}"><i class="fa fa-edit"></i></a></td>
+                            <td class="text-center"><div confirm-delete on-confirm="ds.news.$remove(list)"></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr class="table-active">
-                        <th>#</th>
-                        <th>Заголовок</th>
-                        <th>Автор</th>
-                        <th>Дата публикации</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="list in ds.news.last_news | orderBy:'id'">
-                        {{list.id}}
-                        <th>{{list.id}}</th>
-                        <th scope="row">{{list.title}}</th>
-                        <td>{{list.fullname}}</td>
-                        <td>{{list.date_pub}}</td>
-                        <td><a href="#!/news/{{list.id}}"><i class="fa fa-edit"></i></a></td>
-                        <td class="text-center"><div confirm-delete on-confirm="ds.newsDelete(list.id)"></div></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+</section>

@@ -11,39 +11,27 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet">
-
     <link href="css/angular-material.min.css" rel="stylesheet">
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-    <!-- Waves Effect Css -->
-    <link href="assets/AdminBSBMaterialDesign/plugins/node-waves/waves.css" rel="stylesheet" />
-    <!-- Animation Css -->
-    <link href="assets/AdminBSBMaterialDesign/plugins/animate-css/animate.css" rel="stylesheet" />
-    <!-- Morris Chart Css-->
-    <link href="assets/AdminBSBMaterialDesign/plugins/morrisjs/morris.css" rel="stylesheet" />
-    <!-- Custom Css -->
-    <link href="assets/AdminBSBMaterialDesign/css/style.css" rel="stylesheet">
-    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
-    <link href="assets/AdminBSBMaterialDesign/css/themes/all-themes.css" rel="stylesheet" />
-
-
+    <link href="assets/plugins/node-waves/waves.css" rel="stylesheet" />
+    <link href="assets/plugins/animate-css/animate.css" rel="stylesheet" />
+    <link href="assets/plugins/morrisjs/morris.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/themes/all-themes.css" rel="stylesheet" />
 </head>
 
-<body class="theme-red">
-    <div id="wrapper">
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0">
+<body class="theme-blue-grey">
+    <div class="overlay"></div>
+    <nav class="navbar" role="navigation">
+        <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -51,90 +39,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" style="color:#fcf8e3" href="/">TheWebBird Dashboard</a>
+                <a class="navbar-brand" href="index.html">Thewebbird Dashboard</a>
             </div>
-            <!-- /.navbar-header -->
 
-            <ul class="nav navbar-top-links navbar-right">
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-th-large fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#!/events">
-                                <div>
-                                    <i class="fa fa-microphone fa-fw"></i> Афиша
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#!/news">
-                                <div>
-                                    <i class="fa fa-list-alt fa-fw"></i> Новости
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#!/video">
-                                <div>
-                                    <i class="fa fa-film fa-fw"></i> Видеотека
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#!/audio">
-                                <div>
-                                    <i class="fa fa-music fa-fw"></i> Фонотека
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> Профиль</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Настройки</a>
-                        <li><a href="#!/users"><i class="fa fa-users fa-fw"></i> Пользователи</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href id="logout"><i class="fa fa-sign-out fa-fw"></i> Выход</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
+            <ul class="nav navbar-nav navbar-right navbar-collapse ">
+                <li><a href="#!/events">Events</a></li>
+                <li><a href="#!/news">News</a></li>
             </ul>
-            <!-- /.navbar-top-links -->
-        </nav>
-
-        <div class="container">
-            <div ng-view></div>
         </div>
+    </nav>
 
-        <footer class="footer">
-            <div class="container">
-                  <p class="text-muted text-right">twb-dashboard</p>
-            </div>
-        </footer>
+    <div class="container">
+        <div ng-view></div>
     </div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/angular.min.js"></script>
-
+    <script src="http://cdn.ckeditor.com/4.6.2/standard-all/ckeditor.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
     <script src="js/angular-animate.min.js"></script>
     <script src="js/angular-route.min.js"></script>
@@ -194,39 +116,52 @@
 
     <!-- theme -->
     <!-- Select Plugin Js -->
-    <script src="assets/AdminBSBMaterialDesign/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="assets/AdminBSBMaterialDesign/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="assets/AdminBSBMaterialDesign/plugins/node-waves/waves.js"></script>
+    <script src="assets/plugins/node-waves/waves.js"></script>
 
     <!-- Jquery CountTo Plugin Js -->
-    <script src="assets/AdminBSBMaterialDesign/plugins/jquery-countto/jquery.countTo.js"></script>
+    <script src="assets/plugins/jquery-countto/jquery.countTo.js"></script>
 
     <!-- Morris Plugin Js -->
-    <script src="assets/AdminBSBMaterialDesign/plugins/raphael/raphael.min.js"></script>
-    <script src="assets/AdminBSBMaterialDesign/plugins/morrisjs/morris.js"></script>
+    <script src="assets/plugins/raphael/raphael.min.js"></script>
+    <script src="assets/plugins/morrisjs/morris.js"></script>
 
     <!-- ChartJs -->
-    <script src="assets/AdminBSBMaterialDesign/plugins/chartjs/Chart.bundle.js"></script>
+    <script src="assets/plugins/chartjs/Chart.bundle.js"></script>
 
     <!-- Flot Charts Plugin Js -->
-    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.js"></script>
-    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.resize.js"></script>
-    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.pie.js"></script>
-    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.categories.js"></script>
-    <script src="assets/AdminBSBMaterialDesign/plugins/flot-charts/jquery.flot.time.js"></script>
+    <script src="assets/plugins/flot-charts/jquery.flot.js"></script>
+    <script src="assets/plugins/flot-charts/jquery.flot.resize.js"></script>
+    <script src="assets/plugins/flot-charts/jquery.flot.pie.js"></script>
+    <script src="assets/plugins/flot-charts/jquery.flot.categories.js"></script>
+    <script src="assets/plugins/flot-charts/jquery.flot.time.js"></script>
 
     <!-- Sparkline Chart Plugin Js -->
-    <script src="assets/AdminBSBMaterialDesign/plugins/jquery-sparkline/jquery.sparkline.js"></script>
-
-    <!-- Custom Js -->
-    <!--<script src="js/admin.js"></script>
-    <script src="js/pages/index.js"></script>-->
+    <script src="assets/plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
 
+
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase-database.js"></script>-->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBdLs3VZ1_tyeGm_VVOeOD6A5MTHRQSUTE",
+            authDomain: "twb-admin-870bb.firebaseapp.com",
+            databaseURL: "https://twb-admin-870bb.firebaseio.com",
+            projectId: "twb-admin-870bb",
+            storageBucket: "gs://twb-admin-870bb.appspot.com/",
+            messagingSenderId: "1033358591036"
+        };
+        firebase.initializeApp(config);
+    </script>
 
 </body>
 </html>

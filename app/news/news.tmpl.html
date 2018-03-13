@@ -1,30 +1,35 @@
-<div>
+<aside class="sidebar">
+    <h1 class="page-header p-l-20">News</h1>
+    <div class="bg-cyan info-box">
+        <div class="icon">
+            <i class="fa fa-list-alt fa-3x"></i>
+        </div>
+        <div class="content">
+            <h3>{{ news.list.length }} news</h3>
+        </div>
+    </div>
+
+    <a class="btn bg-cyan btn-block" ng-href="#!/news/0" role="button">Add news</a>
+</aside>
+
+<section class="content">
     <div mc-notification notification="news.notification"></div>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">Новости</h2>
+    <div class="card">
+        <div class="header">
+            <h2>Latest news</h2>
         </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <a class="btn btn-primary" ng-href="#!/news/0" role="button">Добавить</a>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-lg-12">
-            <table class="table table-sm">
+        <div class="body">
+            <table class="table table-striped">
                 <thead>
                 <tr class="table-active">
                     <th>ID</th>
-                    <th>Название</th>
-                    <th>Автор</th>
-                    <th>Дата доб.</th>
-                    <th>Дата публ.</th>
-                    <th class="text-center">Опубликовано</th>
-                    <th class="text-center">Случайные новости</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Date added</th>
+                    <th>Date published</th>
+                    <th class="text-center">Published</th>
+                    <th class="text-center">Random news</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -44,10 +49,10 @@
                 </tbody>
             </table>
         </div>
-    </div> <!-- /row table -->
-    <div class="row-fluid">
+    </div>
+    <div>
         <ul uib-pagination total-items="news.count_pages" ng-model="news.current_page" max-size="5"  direction-links="false" items-per-page="news.per_page"
             class="pagination-sm" boundary-link-numbers="true" rotate="false"  ng-click="news.getNews(news.current_page)"></ul>
         <pre>Страница: {{news.current_page}} / {{news.total_pages}}</pre>
     </div>
-</div> <!-- /controller -->
+</section> <!-- /controller -->

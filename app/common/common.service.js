@@ -5,9 +5,9 @@
         .module('Common')
         .factory('dataService', dataService);
 
-    dataService.$inject = ['$http', 'constants', '$location', '$route'];
+    dataService.$inject = ['$http', 'constants', '$location', '$route', '$firebaseArray', '$firebaseObject'];
 
-    function dataService ($http, constants, $location, $route) {
+    function dataService ($http, constants, $location, $route, $firebaseArray, $firebaseObject) {
         var api = constants.apiURLs;
 
         var notificationStatus = { error: false, status: false, message: '' };
@@ -29,6 +29,8 @@
             errorNotif: errorNotif,
             getItemsByParam: getItemsByParam,
             mapItems: mapItems,
+            getObject: getObject,
+            getRef: getRef,
             notificationStatus: notificationStatus
         };
 
@@ -47,6 +49,16 @@
             return deleteData(url).then(function(data){ return data; })
         }
 
+        /* firebase requests */
+        function getRef(url) {
+            return firebase.database().ref().child(url);
+        }
+
+        function getObject(url) {
+            var ref = firebase.database().ref().child(url);
+
+            return $firebaseObject(ref);
+        }
 
         /* server requests */
         function getData(apiURL) {
@@ -67,6 +79,10 @@
 
 
         /* common getters */
+        /*function getUsers() {
+            return $firebaseArray(getRef("authors"));
+        };*/
+
         function getUsers() {
             return getItems(api.users).then(function(data){
                 return data.list;
